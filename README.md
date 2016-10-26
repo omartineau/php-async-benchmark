@@ -13,7 +13,25 @@ Which async framework perform the most ?
 
 
 
+## Run
 
+### ReactPHP
+
+```sh
+php react/test-react.php
+```
+
+### Workerman
+
+#### Run workerman server
+```sh
+php test-workerman.php start -d
+```
+
+##### Stop
+```sh
+php test-workerman.php stop
+```
 
 ## Docker
 

@@ -1,6 +1,7 @@
 <?php
 require_once './vendor/autoload.php';
 $loop = React\EventLoop\Factory::create();
+
 $socket = new React\Socket\Server($loop);
 
 $http = new React\Http\Server($socket);
@@ -14,10 +15,11 @@ $http->on('request', function ($request, $response) {
         $div = $div*10;
     }
     if ($counter % $div == 0) {
-        echo $counter."\n";
+        #echo $counter."\n";
     }
     $response->end("OK");
 });
 
-$socket->listen(1337);
+$socket->listen(1337, '0.0.0.0');
+
 $loop->run();
